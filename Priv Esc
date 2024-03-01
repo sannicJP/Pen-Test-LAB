@@ -5,6 +5,8 @@ cd /opt
 
 ls
 
+cat admin.c
+
 ./admin
 
 (upgrade your shell)
