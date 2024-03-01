@@ -1,1 +1,3 @@
 setup a way for the box to always send you a reverse shell
+
+open up router and set up a port for persistant shell (refer to screenshot)
