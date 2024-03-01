@@ -15,3 +15,7 @@ export TERM=xterm-256color
 
 (ATTACKER) echo $TERM && tput lines && tput cols 
 (VICTIM) stty rows 27 columns 77 
+
+id
+
+/bin/bash (should be "root@App1" now)
