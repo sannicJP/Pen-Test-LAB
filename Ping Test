@@ -14,12 +14,18 @@ nano ping_sweep
 
 cat ping_sweep
 
-cat ping_sweep | awk -F ":" '{print }'
+cat ping_sweep | awk -F ":" '{print $1}'
 
-cat ping_sweep | awk -F ":" '{print }'at ping_sweep | awk -F " " '{print }'
+cat ping_sweep | awk -F ":" '{print $1}'at ping_sweep | awk -F " " '{print $4}'
 
-cat ping_sweep | awk -F ":" '{print }'at ping_sweep | awk -F " " '{print }' | sort -V
+cat ping_sweep | awk -F ":" '{print $1}'at ping_sweep | awk -F " " '{print $4}' | sort -V
 
-cat ping_sweep | awk -F ":" '{print }'at ping_sweep | awk -F " " '{print }' | sort -V >> targets
+cat ping_sweep | awk -F ":" '{print $1}'at ping_sweep | awk -F " " '{print $4}' | sort -V >> targets
 
 cat targets
+
+you can delete the IP ending in 1.1 "it doesint play nice"
+
+cat targets | xargs mkdir (making directories so we can share information and organize the data better)
+
+for i in 192.*;do echo $i > ./$i/scope; done (make scope files in each directory so we can these files directly over the proxy)
