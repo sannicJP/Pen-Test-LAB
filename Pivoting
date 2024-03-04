@@ -1,1 +1,12 @@
 
+# Configuring ProxyChains for Enhanced Anonymity
+
+## Pre-requisites:
+- **Ensure `xclip` is installed for RDP functionality.**
+
+## On the Attacker Box:
+
+### 1. Edit ProxyChains Configuration
+If you haven't already configured ProxyChains, open the configuration file with:
+```bash
+sudo nano /etc/proxychains4.conf
