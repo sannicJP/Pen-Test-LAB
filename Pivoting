@@ -1,22 +1,27 @@
-Configuring ProxyChains for Enhanced Anonymity
-Pre-requisites:
-Ensure xclip is installed for RDP functionality.
-On the Attacker Box:
-1. Edit ProxyChains Configuration
+# Configuring ProxyChains for Enhanced Anonymity
+
+## Pre-requisites:
+- **Ensure `xclip` is installed for RDP functionality.**
+
+## On the Attacker Box:
+
+### 1. **Edit ProxyChains Configuration**
 If you haven't already configured ProxyChains, open the configuration file with:
+```bash
 sudo nano /etc/proxychains4.conf
-Modify ProxyChains Configuration:
+- Modify ProxyChains Configuration:
 Comment out strict_chain
 Uncomment dynamic_chain
 Uncomment quiet_mode
 Comment proxy_dns
-Change the Default Config
-from socks4 127.0.0.1 9080 to socks5 127.0.0.1 [YourPreferredPort] where [YourPreferredPort] is the port number you choose.
+- Change the Default Config
+Change from socks4 127.0.0.1 9080 to socks5 127.0.0.1 [YourPreferredPort] where [YourPreferredPort] is the port number you choose.
 
 2. Verify SSH Service Status and Start if Necessary
 Check if SSH service is running:
 sudo systemctl status ssh.service
-f the SSH service is not started, start it with:
+If the SSH service is not started, start it with:
+sudo systemctl start ssh.service
 3. Configure Port Forwarding Rule on pfSense
 This step is crucial for setting up a tunnel from the victim machine back to the attacker's machine.
 
@@ -33,3 +38,5 @@ This step ensures that the scanning traffic is routed through the established SS
 Additional Notes:
 Ensure to refer to the wiki for screenshots and more detailed steps if necessary.
 The process involves setting up an SSH tunnel from the victim machine to the attacker's machine, thereby allowing the attacker to route traffic (such as Nmap scans) through the tunnel, effectively masking their true IP address.
+
+This version uses different header levels to establish a clear hierarchy, with important actions and notes bolded for emphasis. Using larger headers for main sections and smaller headers for sub-sections helps in organizing the content logically and improving readability.
