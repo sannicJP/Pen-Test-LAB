@@ -39,14 +39,6 @@ sudo nmap -iL scope -F -Pn -sT | tee fast_scan to see if it works
 After researching what port to attack and how. ( utulize google and other resources for research “HackTricks”)
 Open a new terminal .
 
-
-
-
-
-
-
-
-
 Pivoting
 
 Comment strictchain and uncomment dynamicchain. Uncomment quitemode. Comment proxydns. Then change the default config at the bottom from socks4 127.0.0.1 9080 to socks5 and whatever port you want to use.
@@ -101,3 +93,5 @@ Ensure to refer to the wiki for screenshots and more detailed steps if necessary
 The process involves setting up an SSH tunnel from the victim machine to the attacker's machine, thereby allowing the attacker to route traffic (such as Nmap scans) through the tunnel, effectively masking their true IP address.
 This guide provides a straightforward approach to configuring ProxyChains and setting up an SSH tunnel for secure and anonymous operations.
 
+
+python3 -m http.server 8000
