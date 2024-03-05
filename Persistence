@@ -27,4 +27,4 @@ make sure to comment out #Your Name then put in your command.
 
 (make sure to update crontab with new syntax if you changed it then redo listener)
 
-(now when your terminal is killed or you reboot VVM just repeat the nc -lvp *Line 17* and your back in)
+(now when your terminal is killed or you reboot VVM just repeat the nc -lvp *Line 10* and your back in)
