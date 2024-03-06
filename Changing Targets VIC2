@@ -10,7 +10,9 @@ open ssh for a listner to set up proxy
 
 (TERM 1) sudo systemctl status ssh.service (CHECK/CHANGE/CHECK)
 
-(TERM 1) sudo systemctl status ssh.service
+(TERM 1) sudo systemctl start ssh.service
+
+(TERM 1) REPEAT LINE 11 FOR (CHECK/CHANGE/CHECK)
 
 (TERM 1) netstat natp | grep LISTEN (SHOULD SEE YOUR PORT AND ESTABLISHED)
 
