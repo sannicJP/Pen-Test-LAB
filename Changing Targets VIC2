@@ -8,7 +8,7 @@ catch persistent shell
 (ATK) after catching app 1 (MY PORT 55556)
 open ssh for a listner to set up proxy
 
-(TERM 1) sudo systemctl status ssh.service (CHECK/CHANGE/CHECK)
+(TERM 1) sudo systemctl status ssh.service > CTL + C (CHECK/CHANGE/CHECK)
 
 (TERM 1) sudo systemctl start ssh.service
 
