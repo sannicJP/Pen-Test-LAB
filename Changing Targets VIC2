@@ -22,7 +22,7 @@ open ssh for a listner to set up proxy
 
 (ATK) (TERM 1) netstat -natp | grep LISTEN (OUT OUTPUT SHOULD BE 9080 QUAD 0* LISTEN)
 
-(ATK)(TERM 2) LS > CD INTERNAL (SHOULD SEE IP'S PING SWEEPS AND TARGETS) > LS > CD 198.168.1.102 
+(ATK)(TERM 2) LS > CD INTERNAL (SHOULD SEE IP'S PING SWEEPS AND TARGETS) > LS > CD 192.168.1.102 
 
 (ATK)(TERM 2) sudo proxychains nmap -iL scope -F Pn -sT (VERIFY ITS WORKING)
 
