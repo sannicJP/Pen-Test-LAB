@@ -1,14 +1,14 @@
 https://docs.google.com/document/d/1JrZwgBWYPLqBC2X1TcaHTomDRcLvnaJJcHp34pDkkcA/edit?usp=sharing
 
 catch persistent shell	
-(ATK) nc -lvp 61775
+(ATK) nc -lvp 55556
 
 *upgrade shell
 
 (ATK) after catching app 1
 open ssh for a listner to set up proxy
 
-(ATK) after catching app 1 (MY PORT (61775)
+(ATK) after catching app 1 (MY PORT 55556)
 open ssh for proxy
 
 (TERM 1) sudo systemctl status ssh.service (CHECK/CHANGE/CHECK)
