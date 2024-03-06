@@ -1,0 +1,26 @@
+the two different ways to do this within Metasploit, you can run the search command to just called search and then you throw in the service and the version uh or on Cali directly from the terminal called Search sploit
+utulize metasploit to get on soc4. 
+
+proxychains is used because you dont have to drop anything on the victim because ssh is already built in.
+
+So we open up Metasploit through proxy chains.
+(ATTACKER) sudo proxychains msfconsole
+
+checked to see if it was vulnerable to SSH enumeration.
+
+landed inside exploit module within Metasploit while it's proxied. 
+say use zero, it's going to set set me up to utilize this module here.
+
+(ATTACKER) searchsploit postgresql
+
+LOST comming back through our WAN
+
+msf6 exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set
+
+msf6 exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > run
+
+break out metasploit by using your first port you made creating another shell to brake out metasploit (he used 12222)
+
+set up python3 shortest in cron tabs
+
+he set up another listner over port 12225 (VIC 2 Persisitence)
