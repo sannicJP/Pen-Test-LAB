@@ -77,6 +77,9 @@ catch user persistence shell ON VIC2 [[14:02]]DAY 12
 
 (ATTACKER) python3 -m http.server 8000
 
+
+
 set up another port fowarding rule with this port number because thats where the websever is.
 
-(type in web browser) 127.0.0.1:8000 [use ip thats local to you
+(type in web browser) 127.0.0.1:8000 [use ip thats local to you]
+were going to download linPEAS to ourselves (ATTACKER) and then access it through the web server from the victim side. basically hosting linPeas utulizing python throwing up on a webpage and the downloading it from victim.
