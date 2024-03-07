@@ -63,18 +63,18 @@ run id
 
 break out metasploit by using your first port you made creating another shell to brake out metasploit (he used 12222)
 
-set up python3 shortest in cron tabs
+(VICTIM) create a crontab using python3 shortest with your port number you want to use for VIC2 persistence
 
 he set up another listner over port 12225 (VIC 2 Persisitence)
 
 catch user persistence shell ON VIC2 [[14:02]]DAY 12
-nc -lvp 55555
+(ATTACKER) nc -lvp 55557 [NEW PORT I SET VIC ON PFSENSE]
 
-upgrade shell
+(ATTACKER) (NEW TERM) CAT INTERNAL AND CD TO 192.168.1.102
 
-create a crontab using python3 shortest with your port number you want to use for VIC2 persistence
 
-nc -lvp 55557
+
+
 
 
 
