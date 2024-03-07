@@ -13,6 +13,8 @@ Based off the server data in (ATK) (TERM 2) we saw that PostgreSQL is 9.6.0
 
 (ATK)(msf6) serarch postgreql 9 (start from 9.6.0 and back space one character each time to see what you find out)
 
+(ATK)(msf6)> use 0
+
 use exploit modules as much as possible.
 
 LHOST comming back through our WAN
