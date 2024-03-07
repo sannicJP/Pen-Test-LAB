@@ -19,7 +19,7 @@ Based off the server data in (ATK) (TERM 2) we saw that PostgreSQL is 9.6.0
 
 (ATK)(msf6) search postgresql 9
 
-(ATK)(msf6)> use 0 because its a expliot module 
+use number that has expliot module (it vaires but i used the one ending in "cmd_excec")
 
 use exploit modules as much as possible.
 LHOST comming back through our WAN
