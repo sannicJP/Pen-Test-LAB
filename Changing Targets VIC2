@@ -26,5 +26,5 @@ open ssh for a listner to set up proxy
 
 (ATK)(TERM 2) sudo proxychains nmap -iL scope -F Pn -sT (VERIFY ITS WORKING)
 
-catch user persistence shell ON VIC2 [[14:02]]
+catch user persistence shell ON VIC2 [[14:02]]DAY 12
 nc -lvp 55555
