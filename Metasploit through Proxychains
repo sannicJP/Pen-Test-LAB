@@ -8,7 +8,7 @@ Checked to see if it was vulnerable to SSH enumeration.
 landed inside exploit module within Metasploit while it's proxied. 
 say use zero, it's going to set set me up to utilize this module here.
 
-(ATK)(msf6) searchsploit postgresql [1:45:23][Day 11]
+(ATK)(msf6) search postgresql [1:45:23][Day 11]
 Based off the server data in (ATK) (TERM 2) we saw that PostgreSQL is 9.6.0
 
 (ATK)(msf6) search postgreql 9 (start from 9.6.0 and back space one character each time to see what you find out)
