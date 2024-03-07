@@ -70,3 +70,11 @@ he set up another listner over port 12225 (VIC 2 Persisitence)
 catch user persistence shell ON VIC2 [[14:02]]DAY 12
 nc -lvp 55555
 
+upgrade shell
+
+create a crontab using python3 shortest with your port number you want to use for VIC2 persistence
+
+nc -lvp 55557
+
+
+
