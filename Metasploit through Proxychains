@@ -25,7 +25,7 @@ use exploit modules as much as possible.
 
 LHOST comming back through our WAN
 
-[SKIP!!! THIS. TO LINE 30 RABBIT HOLE]
+[SKIP!!! THIS. TO LINE 38 RABBIT HOLE]
 
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options
 
