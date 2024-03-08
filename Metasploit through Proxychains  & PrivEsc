@@ -72,4 +72,4 @@ were going to download linPEAS to ourselves (ATTACKER) and then access it throug
 (VICTIM) chmod u+x linpeas.sh
 (VICTIM) ls -al
 (VICTIM) ctl a + H (capture everything you run in TERM)
-(VICTIM) ./linpeas.sh
+(VICTIM) ./linpeas.sh 
