@@ -80,7 +80,7 @@ up on a webpage and the downloading it from victim.
 
 (ATTACKER) ctl a + H (Close Capture)
 (ATTACKER) ls
-(ATTACKER) mv screenlog.3 linpeas_output
+(ATTACKER) mv screenlog.0 linpeas_output
 (ATTACKER) mv linpeas_output ./Desktop/pentest/internal/192.168.1.102 [this might not be your file path so just make sure its in "internal"]
 (ATTACKER) cd [your path to verify]
 (ATTACKER) cat linpeas_output| less -r
