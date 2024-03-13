@@ -1,31 +1,19 @@
-!!! SKIP IF YOU CREATED INTERNAL, PING_SWEEP AND TARGETS FOLDERS !!!
-
+###SKIP IF YOU CREATED INTERNAL, PING_SWEEP AND TARGETS FOLDERS
 (VICTIM) for i in {1..254}; do (ping -c 1 192.168.1.$i | grep "bytes from" &); done
-
 copy and save
-
-(ATTK) mkdir internal
-
-cd internal
-
-ls
-
-nano ping_sweep
-
-cat ping_sweep
-
-cat ping_sweep | awk -F ":" '{print $1}'
-
-cat ping_sweep | awk -F ":" '{print $1}'at ping_sweep | awk -F " " '{print $4}'
-
-cat ping_sweep | awk -F ":" '{print $1}'at ping_sweep | awk -F " " '{print $4}' | sort -V
-
-cat ping_sweep | awk -F ":" '{print $1}'at ping_sweep | awk -F " " '{print $4}' | sort -V >> targets
-
-cat targets
-
-you can delete the IP ending in 1.1 "it doesint play nice"
-
-cat targets | xargs mkdir (making directories so we can share information and organize the data better)
-
-for i in 192.*;do echo $i > ./$i/scope; done (make scope files in each directory so we can these files directly over the proxy)
+(ATTAKER) mkdir internal
+(ATTAKER)cd internal
+(ATTAKER)ls
+(ATTAKER)nano ping_sweep
+(ATTAKER)cat ping_sweep
+(ATTAKER) cat ping_sweep | awk -F ":" '{print $1}'
+(ATTAKER) cat ping_sweep | awk -F ":" '{print $1}'at ping_sweep | awk -F " " '{print $4}'
+(ATTAKER) cat ping_sweep | awk -F ":" '{print $1}'at ping_sweep | awk -F " " '{print $4}' | sort -V
+(ATTAKER) cat ping_sweep | awk -F ":" '{print $1}'at ping_sweep | awk -F " " '{print $4}' | sort -V >> targets
+(ATTAKER) cat targets
+(ATTAKER) you can delete the IP ending in 1.1 "it doesint play nice"
+(ATTAKER) cat targets | xargs mkdir (making directories so we can share 
+information and organize the data better)
+(ATTAKER) for i in 192.*;do echo $i > ./$i/scope; done 
+(make scope files in each directory so we can use 
+these files directly over the proxy)
