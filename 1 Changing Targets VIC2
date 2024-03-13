@@ -23,6 +23,7 @@ if it states port fowarding failed it means you alrady have ypur proxy open
 (VICTIM) should be promted a password
 
 ### NEXT CONDUCT A PING SWEEP
+
 NOTE: YOUR DIRECTORIES MAY VARY COMPARED TO MY EXAMPLE DEPENDING HOW AND WHERE YOUR SCOPE FILE IS ON KALI
 (ATTACKER)(TERM 2) LS 
 (ATTACKER)(TERM 2)CD INTERNAL
