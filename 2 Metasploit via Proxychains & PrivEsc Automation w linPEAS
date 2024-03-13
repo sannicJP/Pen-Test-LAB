@@ -9,6 +9,8 @@ Checked to see if it was vulnerable to SSH enumeration.
 landed inside exploit module within Metasploit while it's proxied. 
 use whatever number that has the most recent date for exploit module.
 
+HOW TO CATCH USER PERSISTENCE SHELL ON VIC2 
+
 (ATK)(msf6) search postgresql [1:45:23][Day 11]
 Based off the server data in (ATK) (TERM 2) we saw that PostgreSQL is 9.6.0
 (ATK)(msf6) search postgresql 9.6.0 
@@ -41,7 +43,9 @@ number you want to use for VIC2 persistence (THIS PORT NUMBER IS ONLY FOR SOC4 P
 
 he set up another listner over DEFAULT port (VIC 2 Persisitence)
 
-HOW TO CATCH USER PERSISTENCE SHELL ON VIC2 [[14:02]]DAY 12
+[[14:02]]DAY 12
+
+PRIV ESC ON VICTIM 2
 
 (ATTACKER) nc -lvp 55557 [NEW PORT I SET VIC ON PFSENSE]
 (ATTACKER) (NEW TERM) CAT INTERNAL AND CD TO 192.168.1.102
