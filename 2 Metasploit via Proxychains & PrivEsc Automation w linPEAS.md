@@ -62,7 +62,7 @@ search postgresql
 
 ***LOOKS SOMETHING LIKE THIS:***  exploit(multi/postgress/postgress_copy_from_program_cmd_exec)
 
-[3:29][DAY 11]
+[3:29] DAY 11
 
 ```
 set lhost 192.168.122.209 
