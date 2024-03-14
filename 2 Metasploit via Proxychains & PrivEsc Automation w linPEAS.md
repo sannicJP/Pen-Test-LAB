@@ -122,7 +122,7 @@ number you want to use for VIC2 persistence***
 ***Set up another listner over DEFAULT port***        
 #### (VIC 2 Persisitence)
 
-[14:02]DAY 12
+[14:02] DAY 12
 
 
 ### (ATTACKER)
