@@ -426,6 +426,10 @@ ls -la | grep clear
 ```
 
 ```
+chmod u+x clear
+```
+
+```
 arper
 ```
 
