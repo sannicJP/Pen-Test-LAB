@@ -97,8 +97,7 @@ Should get exploit here
 Id
 ```
 
-Break out metasploit by using your FIRST port you made creating 
-another shell open listener on your (DEFAULT PORT)
+
 
 ![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/4647cade-3673-4514-8728-895a4fdf8d11)
 
@@ -110,6 +109,14 @@ number you want to use for VIC2 persistence
 
 
 ![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/555ad47a-e318-4c77-b1da-49c36ad32519)
+
+Break out metasploit by using your FIRST port you made creating 
+another shell open listener on your (DEFAULT PORT) and on the victim paste in the rev shells syntax. when you catch the shell just press enter then /bin/bash.
+
+```
+/bin/bash
+```
+
 
 ![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/cc75956e-935c-49cc-ba10-5bf0a780b058)
 #### (THIS PORT NUMBER IS ONLY FOR SOC4 PERSISTENCE)
