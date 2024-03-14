@@ -9,10 +9,10 @@
 
 #### ***SKIP NEXT STEP IF YOU CONFIGURED PROXY CHAINS ALREADY***
 
-1.(COMMENT) `(#strictchain)`
-2.(UNCOMMENT) `(dynamicchain)`
-3.(UNCOMMENT) `(quitemode)`
-4.(COMMENT) `(#proxydns)`
+1. (COMMENT) `(#strictchain)`
+2. (UNCOMMENT) `(dynamicchain)`
+3. (UNCOMMENT) `(quitemode)`
+4. (COMMENT) `(#proxydns)`
 Then change the default config at the bottom from socks4 to socks5
 127.0.0.1 9080 and whatever port you want to use.
 
