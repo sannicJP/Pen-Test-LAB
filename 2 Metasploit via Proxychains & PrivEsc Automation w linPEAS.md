@@ -292,7 +292,7 @@ cat readme
 
  [2:12:27]
  
-## Section 4: Exploiting harper utilizing msfvenom as a reverse shell
+## Section 4: Exploiting arper utilizing msfvenom as a reverse shell
 
 [3:25:45]
 ![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/1a7d5b6e-dc59-4b1d-bac5-b5b1e7ac049c)
