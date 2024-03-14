@@ -112,7 +112,7 @@ another shell to brake out metasploit (DEFAULT PORT)
 
 Create a crontab using python3 shortest with your port 
 number you want to use for VIC2 persistence
-
+![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/cc75956e-935c-49cc-ba10-5bf0a780b058)
 #### (THIS PORT NUMBER IS ONLY FOR SOC4 PERSISTENCE)
 
 
@@ -236,8 +236,8 @@ watch ls -l
 
 `(ctl a + H)`
 
-
-
+[2:21:33]
+Trying out exploit  [CVE-2018-18955] subuid_shell
 
 ```
 ls
@@ -293,20 +293,11 @@ cd CVE-2021-3156-main
 cat readme
 ```
 
- [2:11] DAY 12
-
-
-```
-python3 exploit_nss.py
-```
-
-```
-gcc -o exploit_timestamp_race exploit_timestamp_race.c
-```
-
  [2:12:27]
  
 ## Section 4: Exploiting harper utilizing msfvenom as a reverse shell
+
+[3:25:45]
 
 ### (ATTACKER) 
 ```
@@ -360,8 +351,10 @@ ls
 echo $PATH
 ```
 
+[3:29]
+
 ```
-export PATH+/tmp:$PATH
+export PATH=/tmp:$PATH
 ```
 
 ```
