@@ -60,7 +60,7 @@ searchsploit postgresql
 search postgresql
 ```
 
-Exploit Module looks something like this: `exploit(multi/postgress/postgress_copy_from_program_cmd_exec)`
+Exploit Module looks something like this make sure you use the number that the has the most recent date: `exploit(multi/postgress/postgress_copy_from_program_cmd_exec)`
 
 [3:29] DAY 11
 
