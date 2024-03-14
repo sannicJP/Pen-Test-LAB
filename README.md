@@ -1,4 +1,5 @@
 # Welcome to sannicJP's GitHub Profile 👋
+![Crimson Delta](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/9f47b2cd-9550-4a90-b5c3-10179b39e061)
 
 Hello there! I'm a budding Cyber Security enthusiast, currently deep in the trenches of learning all about the fascinating world of cybersecurity. As a student, I'm immersing myself in various aspects of this field, constantly seeking out challenges and opportunities to expand my skill set.
 
@@ -26,7 +27,7 @@ I believe in the hands-on approach to learning, where making mistakes is just an
 
 ### Connect with Me:
 
-Feel free to reach out or follow my journey on [LinkedIn](https://www.linkedin.com/in/jpsannicolas/) (hyperlink your LinkedIn profile).
+Feel free to reach out or follow my journey on [LinkedIn](https://www.linkedin.com/in/jpsannicolas/).
 
 **Note**: The projects and notes shared here are for educational purposes, conducted within a sandbox environment designed for training. Please ensure ethical practices and legal compliance in all your cybersecurity endeavors.
 
