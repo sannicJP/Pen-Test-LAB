@@ -105,13 +105,16 @@ another shell open listener on your (DEFAULT PORT)
 ### (VICTIM)
 
 
-Create a crontab using python3 shortest with your port 
+
 number you want to use for VIC2 persistence
 
 
+![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/555ad47a-e318-4c77-b1da-49c36ad32519)
 
 ![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/cc75956e-935c-49cc-ba10-5bf0a780b058)
 #### (THIS PORT NUMBER IS ONLY FOR SOC4 PERSISTENCE)
+Create a crontab using python3 shortest with your port 
+
 
 ## Section 3: PRIV ESC ON SOC4
 
