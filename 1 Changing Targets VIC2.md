@@ -51,9 +51,9 @@ sudo systemctl start ssh.service
 ```
 
 
-MAKE SURE PORT FWD RULE IS GOOD ON PFSENSE SSH PORT 22
+**MAKE SURE PORT FWD RULE IS GOOD ON PFSENSE SSH PORT 22
 if it states port fowarding failed it means you alrady have ypur proxy open
-(VICTIM) should be promted a password
+(VICTIM) should be promted a password**
 
 
 
