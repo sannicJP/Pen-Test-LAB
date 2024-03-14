@@ -105,11 +105,11 @@ Id
 
 
 
-number you want to use for VIC2 persistence
+
 
 
 ![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/555ad47a-e318-4c77-b1da-49c36ad32519)
-
+![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/cc75956e-935c-49cc-ba10-5bf0a780b058)
 Break out metasploit by using your FIRST port you made creating 
 another shell open listener on your (DEFAULT PORT) and on the victim paste in the rev shells syntax. when you catch the shell just press enter then /bin/bash.
 
@@ -117,11 +117,11 @@ another shell open listener on your (DEFAULT PORT) and on the victim paste in th
 /bin/bash
 ```
 
+number you want to use for VIC2 persistence
 
-![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/cc75956e-935c-49cc-ba10-5bf0a780b058)
 #### (THIS PORT NUMBER IS ONLY FOR SOC4 PERSISTENCE)
 Create a crontab using python3 shortest with your port 
-
+![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/4b84efee-c919-4598-9442-c27375f08abb)
 
 ## Section 3: PRIV ESC ON SOC4
 
@@ -330,7 +330,9 @@ python3 -m http.server 8000
 ![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/f69be757-f20c-4bfc-89d2-e38541188b0d)
 
 
+
 ### (VICTIM) 
+
 
 ```
 cd /tmp
