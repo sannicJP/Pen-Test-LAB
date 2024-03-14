@@ -97,11 +97,6 @@ Should get exploit here
 Id
 ```
 
-## Section 3: PRIV ESC ON SOC4
-
-
-
-
 ##### Break out metasploit by using your FIRST port you made creating 
 another shell to brake out metasploit (DEFAULT PORT)
 
@@ -115,8 +110,7 @@ number you want to use for VIC2 persistence
 ![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/cc75956e-935c-49cc-ba10-5bf0a780b058)
 #### (THIS PORT NUMBER IS ONLY FOR SOC4 PERSISTENCE)
 
-
-
+## Section 3: PRIV ESC ON SOC4
 
 Set up another listner over DEFAULT port  (VIC 2 Persisitence)
 
