@@ -426,12 +426,6 @@ run
 
 
 ```
-arper
-```
-
-If this does not clear the screen reverse shell worked.
-
-```
 ./clear
 ```
 
@@ -442,6 +436,12 @@ ls -la | grep clear
 ```
 echo $PATH
 ```
+
+```
+arper
+```
+
+If this does not clear the screen reverse shell worked.
 
 
 ![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/e9abdcc8-781a-4376-9ac3-a402e609ee37)
