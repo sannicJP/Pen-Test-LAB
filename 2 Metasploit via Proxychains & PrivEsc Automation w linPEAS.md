@@ -424,6 +424,9 @@ run
 
 ### (VICTIM)
 
+```
+chmod u+x clear
+```
 
 ```
 ./clear
@@ -453,9 +456,7 @@ id
 ![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/058ede3d-686f-4ad2-9822-59a43b095c87)
 
 
-```
-chmod u+x clear
-```
+
 
 
 ## Thank you! To github.com/carlospolop
