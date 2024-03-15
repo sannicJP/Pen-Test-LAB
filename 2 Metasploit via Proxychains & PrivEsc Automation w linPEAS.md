@@ -423,7 +423,7 @@ run
 ```
 
 ### (VICTIM)
-
+![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/1cd2315e-e9c8-4360-b280-9b31903f7eb3)
 ```
 chmod u+x clear
 ```
