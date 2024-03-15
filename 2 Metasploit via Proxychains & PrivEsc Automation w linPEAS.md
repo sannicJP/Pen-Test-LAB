@@ -424,16 +424,15 @@ run
 
 ### (VICTIM)
 
+
+```
+arper
+```
+
+If this does not clear the screen reverse shell worked.
+
 ```
 ./clear
-```
-
-### (ATACKER) (msf6)
-
-##**Go back and check if command shell opened then run...**
-
-```
-id
 ```
 
 ```
@@ -441,15 +440,22 @@ ls -la | grep clear
 ```
 
 ```
-chmod u+x clear
-```
-
-```
 echo $PATH
 ```
 
+
+![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/e9abdcc8-781a-4376-9ac3-a402e609ee37)
+## **Go back and check if command shell opened then run...**
+
 ```
-arper
+id
 ```
+![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/058ede3d-686f-4ad2-9822-59a43b095c87)
+
+
+```
+chmod u+x clear
+```
+
 
 ## Thank you! To github.com/carlospolop
