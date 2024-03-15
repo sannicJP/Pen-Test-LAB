@@ -329,7 +329,7 @@ python3 -m http.server 8000
 ```
 ![image](https://github.com/sannicJP/Pen-Test-LAB/assets/161343927/f69be757-f20c-4bfc-89d2-e38541188b0d)
 
-
+##Root
 
 ### (VICTIM) 
 
@@ -430,7 +430,7 @@ run
 
 ### (ATACKER) (msf6)
 
-Go back and check if command shell opened then run...
+##**Go back and check if command shell opened then run...**
 
 ```
 id
@@ -442,6 +442,10 @@ ls -la | grep clear
 
 ```
 chmod u+x clear
+```
+
+```
+echo $PATH
 ```
 
 ```
