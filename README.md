@@ -29,6 +29,25 @@ I believe in the hands-on approach to learning, where making mistakes is just an
 
 Feel free to reach out or follow my journey on [LinkedIn](https://www.linkedin.com/in/jpsannicolas/).
 
+
+And also check out my teams profiles as well, because with out them none of this would have been possible. 
+
+
+[LinkedIn] Kehinde Fabiyi  (https://www.linkedin.com/in/kehinde-fabiyi/)
+
+
+[LinkedIn] Mathew Vu (https://www.linkedin.com/in/mathew-vu/)
+
+
+[LinkedIn] Quinnten Lewis (https://www.linkedin.com/in/quinnten-m-lewis/)
+
+
+[LinkedIn] Rudy Y (https://www.linkedin.com/in/rudyyruegas/)
+
+
+[LinkedIn] Nicholas Mutua ()
+
+
 **Note**: The projects and notes shared here are for educational purposes, conducted within a sandbox environment designed for training. Please ensure ethical practices and legal compliance in all your cybersecurity endeavors.
 
 ---
