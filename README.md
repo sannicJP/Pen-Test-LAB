@@ -45,7 +45,7 @@ And also check out my teams profiles as well, because with out them none of this
 [LinkedIn] Rudy Y (https://www.linkedin.com/in/rudyyruegas/)
 
 
-[LinkedIn] Nicholas Mutua ()
+[LinkedIn] Nicholas Mutua (https://www.linkedin.com/in/martin-muthama/)
 
 
 **Note**: The projects and notes shared here are for educational purposes, conducted within a sandbox environment designed for training. Please ensure ethical practices and legal compliance in all your cybersecurity endeavors.
